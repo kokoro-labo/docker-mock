@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+
+## JSON Server
+  json-server:
+    build:
+      context: ./dockerfile
+      dockerfile: json-server.Dockerfile
+    container_name: json-server
+    hostname: json-server
+    image: mock/json-server:latest
+    volumes:
+      - ./volumes/json-server:/data
+    tty: true
+    ports:
+      - "9100:3000"
+      - "9101:3001"
+      - "9102:3002"
+    restart: unless-stopped
