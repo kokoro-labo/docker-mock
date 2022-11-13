@@ -18,3 +18,18 @@ services:
       - "9101:3001"
       - "9102:3002"
     restart: unless-stopped
+
+## Wiremock
+  wiremock:
+    build:
+      context: ./dockerfile
+      dockerfile: wiremock.Dockerfile
+    container_name: wiremock
+    hostname: wiremock
+    image: mock/wiremock:latest
+    volumes:
+      - ./volumes/wiremock:/home/wiremock
+    tty: true
+    ports:
+      - "9110:8080"
+    restart: unless-stopped
