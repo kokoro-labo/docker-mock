@@ -2,7 +2,7 @@
 .env
 
 # Docker Volumes
-volumes/
+# volumes/
 
 # General
 .DS_Store
