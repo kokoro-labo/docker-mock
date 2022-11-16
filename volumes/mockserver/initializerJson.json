@@ -1,0 +1,26 @@
+[
+  {
+    "httpRequest": {
+      "path": "/"
+    },
+    "httpResponse": {
+      "body": "This is TOP PAGE"
+    }
+  },
+  {
+    "httpRequest": {
+      "path": "/firstExampleExpectation"
+    },
+    "httpResponse": {
+      "body": "first response"
+    }
+  },
+  {
+    "httpRequest": {
+      "path": "/secondExampleExpectation"
+    },
+    "httpResponse": {
+      "body": "second response"
+    }
+  }
+]
