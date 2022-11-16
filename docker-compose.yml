@@ -33,3 +33,21 @@ services:
     ports:
       - "9110:8080"
     restart: unless-stopped
+
+## Mockserver
+  mockserver:
+    build:
+      context: ./dockerfile
+      dockerfile: mockserver.Dockerfile
+    container_name: mockserver
+    hostname: mockserver
+    image: mock/mockserver:latest
+    volumes:
+      - ./volumes/mockserver:/config
+    environment:
+      MOCKSERVER_LOG_LEVEL: TRACE
+      MOCKSERVER_INITIALIZATION_JSON_PATH: /config/initializerJson.json
+    tty: true
+    ports:
+      - "9120:1080"
+    restart: unless-stopped
